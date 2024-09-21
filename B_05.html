@@ -2,22 +2,29 @@
 	var wiishop = new wiiShop();
 	const unused = wiishop.connecting;
   /**
+   * Returns the value of the URL parameter 
    * @param {string} param
    * 
    */
-  /*function getUrlParam(param) {
+  function getUrlParam(param) {
     var url = top.location.href;
-    var params = url.split("?")
-    url = params[1];
-    for (var i = 0; i < url.length; i++) {
-      var tempUrl = url[i].split("=");
+    url = url.split("?")[1];
+
+    if (url.indexOf("&") == -1) {
+      var tempUrl = url.split("=");
       if (tempUrl[0] == param) {
-        console.log(tempUrl[1]);
         return tempUrl[1];
       }
+    } else {
+      url = url.split("&");
+      for (var i = 0; i < url.length; i++) {
+        var tempUrl = url[i].split("=");
+        if (tempUrl[0] == param) {
+          return tempUrl[1];
+        }
+      }
     }
-    console.log(url)
-  }*/
+  }
 </script>
 <!--  -----------------------------------------------------  -->
 <!--  Copyright 2005-2014 Acer Cloud Technology, Inc.        -->
